@@ -1,7 +1,7 @@
 {
-  "name": "page-flow-plugin",
+  "name": "govuk-comms-plugin",
   "author": "Ben Watson",
-  "description": "A plugin to visualise the pages of a prototype with a linear user journey",
+  "description": "A plugin to simulate communications from other channels such as email, SMS or later and convey the passing of time between interactions.",
   "version": "1.0.0",
   "dependencies": {
   }
