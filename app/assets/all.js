@@ -1,3 +1,9 @@
+console.log('Loaded Comms')
+
+function alertTheUser(message) {
+  alert(message)
+}
+
 function daysPass (page, waitTime, days) {
   var theWaitTime = waitTime || 3000
   setTimeout(function () {
