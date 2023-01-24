@@ -2,17 +2,13 @@
   width: $emailAlertWidth;
   background: #eaeaea;
   border: 2px solid black;
-  height: $emailAlertWidth;
+  min-height: $emailAlertHeight;
   transition: all 1.5s;
   animation: shake 5s cubic-bezier(.36, .07, .19, .97) both infinite;
   transform: translate3d(0, 0, 0);
+  padding: 1rem;
   position: fixed;
   bottom: -100%;
-
-  &--translate-from-bottom {
-    bottom: 1rem;
-    right: 1rem;
-  }
 
   &:hover {
     cursor: pointer;

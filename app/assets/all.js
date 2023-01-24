@@ -13,16 +13,20 @@ const notifyUserOfMessage = (type, heading, message, from, target) => {
   // Insert relevant html into page (SMS or Email)
   addHtmlToPage(type, heading, message, from)
   // Reveal notification
-
+  const theNotification = document.querySelector('.govuk-comms-plugin--' + type + '-alert')
+  setTimeout(() => {
+    theNotification.classList.add('govuk-comms-plugin--translate-from-bottom')
+  }, 1000)
   // Handle click
+  theNotification.addEventListener('click', (e) => {
+    window.location.href = target
+  })
+
 }
 
 const addHtmlToPage = (type, heading, message, from) => {
   console.log('addHtmlToPage')
   document.getElementById('main-content').innerHTML += setTheHtml(type, heading, message, from)
-  setTimeout(() => {
-    document.querySelector('.govuk-comms-plugin--email-alert').classList.add('govuk-comms-plugin--email-alert--translate-from-bottom')
-  }, 1000)
 }
 
 const setTheHtml = (type, heading, message, from) => {
