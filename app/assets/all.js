@@ -7,6 +7,41 @@ function alertTheUser(message) {
 const theTrigger = document.getElementById('triggerDaysPassing')
 const theCounter = document.getElementById('daysPassing')
 
+const notifyUserOfMessage = (type, heading, message, from, target) => {
+  console.log('notifyUserOfMessage')
+  type = type || 'email'
+  // Insert relevant html into page (SMS or Email)
+  addHtmlToPage(type, heading, message, from)
+  // Reveal notification
+
+  // Handle click
+}
+
+const addHtmlToPage = (type, heading, message, from) => {
+  console.log('addHtmlToPage')
+  document.getElementById('main-content').appendChild( setTheHtml(type))
+  addTheMessageToTheHtml(heading, message, from)
+}
+
+const addTheMessageToTheHtml = (heading, message, from) => {
+  // Swap out the template literals for the variables
+}
+
+const setTheHtml = (type) => {
+  if (type === 'email') {
+    return `<div id="govuk-comms-plugin--email-alert">
+    <h2>Email alert!</h2>
+    <p>This is an alert</p>
+    </div>`
+  } else {
+    return `<div id="phoneBackground" class="active">
+        <div id="phone-mockup" class="active">
+
+        </div>
+    </div>`
+  }
+}
+
 function daysPass (page, waitTime, days) {
   console.log('Days passing function called')
   const theWaitTime = waitTime || 3000
