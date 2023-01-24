@@ -19,19 +19,17 @@ const notifyUserOfMessage = (type, heading, message, from, target) => {
 
 const addHtmlToPage = (type, heading, message, from) => {
   console.log('addHtmlToPage')
-  document.getElementById('main-content').innerHTML += setTheHtml(type)
+  document.getElementById('main-content').innerHTML += setTheHtml(type, heading, message, from)
   addTheMessageToTheHtml(heading, message, from)
 }
 
-const addTheMessageToTheHtml = (heading, message, from) => {
-  // Swap out the template literals for the variables
-}
-
-const setTheHtml = (type) => {
+const setTheHtml = (type, heading, message, from) => {
   if (type === 'email') {
     return `<div id="govuk-comms-plugin--email-alert">
     <h2>Email alert!</h2>
-    <p>This is an alert</p>
+    <p>Heading: ${heading}</p>
+    <p>Message: ${message}</p>
+    <p>From: ${from}</p>
     </div>`
   } else {
     return `<div id="phoneBackground" class="active">
