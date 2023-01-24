@@ -13,8 +13,8 @@
   ],
   "templates": [
     {
-      "name": "Page Flow Wizard",
-      "path": "/app/views/template.njk",
+      "name": "Email",
+      "path": "/app/templates/email-layout.html",
       "type": "nunjucks"
     }
   ]
