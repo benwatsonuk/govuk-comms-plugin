@@ -20,12 +20,14 @@ const notifyUserOfMessage = (type, heading, message, from, target) => {
 const addHtmlToPage = (type, heading, message, from) => {
   console.log('addHtmlToPage')
   document.getElementById('main-content').innerHTML += setTheHtml(type, heading, message, from)
-  addTheMessageToTheHtml(heading, message, from)
+  setTimeout(() => {
+    document.querySelector('.govuk-comms-plugin--email-alert').classList.add('govuk-comms-plugin--email-alert--translate-from-bottom')
+  }, 1000)
 }
 
 const setTheHtml = (type, heading, message, from) => {
   if (type === 'email') {
-    return `<div id="govuk-comms-plugin--email-alert">
+    return `<div class="govuk-comms-plugin--email-alert">
     <h2>Email alert!</h2>
     <p>Heading: ${heading}</p>
     <p>Message: ${message}</p>
