@@ -2,7 +2,7 @@
   "name": "govuk-comms-plugin",
   "author": "Ben Watson",
   "description": "A plugin to simulate communications from other channels such as email, SMS or later and convey the passing of time between interactions.",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "scripts": {
     "test": "mocha"
   },
