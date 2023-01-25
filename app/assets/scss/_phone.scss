@@ -1,6 +1,6 @@
 #phone-mockup {
   width: $phoneWidth;
-  background: url($govuk-comms-assets + '/images/phone-alert.png') no-repeat;
+  background: url($govuk-comms-assets + 'images/phone-alert.png') no-repeat;
   background-size: cover;
   height: $phoneHeight;
   transition: all 1.5s;
@@ -17,7 +17,7 @@
   height: 100%;
   width: 100%;
   left: 0;
-  background: rgba(255, 255, 255, 1);
+  background: rgba(255, 255, 255, 0.8);
   bottom: -100%;
   //opacity: 0;
   transition-timing-function: ease-in-out;

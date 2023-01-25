@@ -19,7 +19,11 @@ const notifyUserOfMessage = (type, heading, message, from, target) => {
   }, 1000)
   // Handle click
   theNotification.addEventListener('click', (e) => {
-    window.location.href = target
+    if (target) {
+      window.location.href = target
+    } else {
+      theNotification.classList.remove('active')
+    }
   })
 
 }
@@ -38,7 +42,7 @@ const setTheHtml = (type, heading, message, from) => {
     <p>From: ${from}</p>
     </div>`
   } else {
-    return `<div id="phoneBackground" class="active">
+    return `<div id="phoneBackground" class="govuk-comms-plugin--phone-alert active">
         <div id="phone-mockup" class="active">
 
         </div>
