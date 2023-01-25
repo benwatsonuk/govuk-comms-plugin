@@ -33,13 +33,21 @@ const addHtmlToPage = (type, heading, message, from) => {
   document.getElementById('main-content').innerHTML += setTheHtml(type, heading, message, from)
 }
 
+const truncateString = (str, n) => {
+  if (str.length > n) {
+    return str.substring(0, n) + "...";
+  } else {
+    return str;
+  }
+}
+
 const setTheHtml = (type, heading, message, from) => {
   if (type === 'email') {
-    return `<div class="govuk-comms-plugin--email-alert">
-    <h2>Email alert!</h2>
-    <p>Heading: ${heading}</p>
-    <p>Message: ${message}</p>
-    <p>From: ${from}</p>
+    message = truncateString(message, 75)
+    return `<div class="govuk-comms-plugin--email-alert govuk-comms-plugin--email-alert--windows-10">
+    <h2>${from}</h2>
+    <h3>${heading}</h3>
+    <p>${message}</p>
     </div>`
   } else {
     return `<div id="phoneBackground" class="govuk-comms-plugin--phone-alert active">
